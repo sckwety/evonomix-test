@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('/libs/jquery-ui/jquery-ui.min.js') }}" defer></script>
+    <script src="{{ asset('/js/frontend.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('libs/jquery-ui/jquery-ui.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
