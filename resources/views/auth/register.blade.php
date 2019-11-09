@@ -53,7 +53,7 @@
                             <div class="col-md-6">
                                 <input id="birthdate" type="text" class="form-control datepicker-ui @error('birthdate') is-invalid @enderror"
                                        name="birthdate" value="{{ old('birthdate') }}"
-                                       placeholder="yy-mm-dd"
+                                       placeholder="Year-Month-Day"
                                        required autocomplete="birthdate" autofocus>
 
                                 @error('birthdate')
