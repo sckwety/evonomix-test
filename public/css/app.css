@@ -11659,3 +11659,16 @@ a.text-dark:focus {
   }
 }
 
+@media screen and (max-width: 345px) {
+  .xdsoft_datetimepicker {
+    left: 0 !important;
+  }
+}
+
+.contain-center {
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+

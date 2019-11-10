@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->enum('gender', ['male', 'female', 'other']);
-            $table->timestamp('birthdate');
+            $table->timestamp('birthday');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->boolean('is_admin')->nullable();

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Photo;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class AdminController extends Controller
 {
     /**
      * Show the application dashboard.

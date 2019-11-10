@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Admin',
             'gender' => 'other',
-            'birthdate' => date('Y-m-d'),
+            'birthday' => date('Y-m-d'),
             'email' => 'admin@admin.com',
             'email_verified_at' => date('Y-m-d'),
             'is_admin' => 1,

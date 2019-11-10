@@ -48,15 +48,15 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="birthdate" class="col-md-4 col-form-label text-md-right">{{ __('BirthDate') }}</label>
+                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('birthday') }}</label>
 
                             <div class="col-md-6">
-                                <input id="birthdate" type="text" class="form-control datepicker-ui @error('birthdate') is-invalid @enderror"
-                                       name="birthdate" value="{{ old('birthdate') }}"
-                                       placeholder="Year-Month-Day"
-                                       required autocomplete="birthdate" autofocus>
+                                <input id="birthday" type="text" class="form-control datepicker @error('birthday') is-invalid @enderror"
+                                       name="birthday" value="{{ old('birthday') }}"
+                                       placeholder="yy-mm-dd"
+                                       required autocomplete="birthday" autofocus>
 
-                                @error('birthdate')
+                                @error('birthday')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
