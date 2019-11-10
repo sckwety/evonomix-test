@@ -33,13 +33,32 @@ class Photo extends Model
      * @param Request $request
      * @return mixed
      */
+    public static function scopeAdminFilter($query, Request $request)
+    {
+        $query->published()
+            ->select('photos.*')
+            ->join('users as u', 'u.id', '=', 'photos.user_id');
+        if ($search = $request->search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('photos.description', 'like', "%$search%")
+                    ->orWhere('u.name', 'like', "%$search%");
+            });
+        }
+        return $query;
+    }
+
+    /**
+     * @param $query
+     * @param Request $request
+     * @return mixed
+     */
     public static function scopeFilter($query, Request $request)
     {
         if ($request->status == 'published') {
-            $query->published();
+            return $query->published();
         }
         elseif ($request->status == 'not-published') {
-            $query->notPublished();
+            return $query->notPublished();
         }
     }
 

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -51,5 +52,31 @@ class User extends Authenticatable implements MustVerifyEmail
     public function photos()
     {
         return $this->hasMany(Photo::class);
+    }
+
+    /**
+     * @param $query
+     * @param Request $request
+     * @return mixed
+     */
+    public static function scopeAdminFilter($query, Request $request)
+    {
+        if ($search = $request->search) {
+            $query->where('name', 'like', "%$search%");
+        }
+
+        if ($gender = $request->gender) {
+            $query->where('gender', $gender);
+        }
+
+        if ($startAge = $request->start_age) {
+            $query->where('birthday', '<=', date((date('Y') - $startAge) . '-m-d'));
+        }
+
+        if ($endAge = $request->end_age) {
+            $query->where('birthday', '>=', date((date('Y') - $endAge) . '-m-d'));
+        }
+
+        return $query;
     }
 }

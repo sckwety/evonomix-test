@@ -25,7 +25,7 @@
                                 </label>
 
                                 <div class="col-md-6">
-                                    <textarea id="description" type="description"
+                                    <textarea id="description"
                                               class="form-control @error('description') is-invalid @enderror"
                                               name="description" required>{{
                                                     old('description', $photo->description ?? '')
